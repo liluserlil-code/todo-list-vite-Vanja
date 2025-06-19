@@ -1,6 +1,15 @@
-import ButtonSave from "./components/ButtonSave";
+//import ButtonSave from "./components/ButtonSave";
+import "./components/AddNew.css"
+import { useNavigate } from "react-router-dom";
 
-const AddNew = () =>{
+const AddNew = () => {
+    
+    const navigate = useNavigate();
+
+    const Click = () =>{
+        navigate("/")
+    }
+
     return(
         <>
             <header>
@@ -16,7 +25,7 @@ const AddNew = () =>{
                     <option value="">В процессе</option>
                     <option value="">Завершена</option>
                 </select>
-                <ButtonSave/>
+                <button onClick={Click}>Save and return to main page</button>
             </form>
         </>
     )

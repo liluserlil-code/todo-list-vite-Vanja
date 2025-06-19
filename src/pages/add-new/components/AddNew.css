@@ -1,0 +1,30 @@
+form{
+    position: relative;
+    align-items: center;
+}
+
+textarea{
+    position: absolute;
+    left: 15%;
+    width: 60%;
+    height: 500px;
+}
+
+.ButtonSave{
+    position: absolute;
+    right: 10px;
+}
+
+label{
+    position: absolute;
+    width: 100px;
+    right: calc(25%/2 - 50px);
+    text-align: center;
+}
+
+select{
+    position: absolute;
+    width: 100px;
+    right: calc(25%/2 - 50px);
+    top: 20px;
+}
