@@ -19,7 +19,7 @@ const TasksList = () => {
             <ButtonToAdd/>
             <div className={s.main}>
                 {tasks.map((task: string[], index: number) =>(
-                    <Task key={index} text={task[0]} status={task[1]}/>
+                    <Task key={index} text={task[0]} status={task[1]} index={index}/>
                 ))}
             </div>
         </>

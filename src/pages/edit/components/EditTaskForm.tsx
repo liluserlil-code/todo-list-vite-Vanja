@@ -1,10 +1,16 @@
-import s from "./NewTaskForm.module.css"
+import s from "./EditTaskForm.module.css"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 //import { useState, type ReactHTMLElement } from "react";
+import { FOREDIT } from "../../../components/constants";
 import { TASKS } from "../../../components/constants";
 
-const NewTaskForm = () => {
+const EditTaskForm = () => {
+    const raw = localStorage.getItem(FOREDIT)
+    const textForEdit = raw ? JSON.parse(raw) : [];
+    //console.log(textForEdit[0])
+    //console.log(textForEdit);
+
     const [text, setText] = useState('');
     const [status, setStatus] = useState('Не начата');
 
@@ -25,18 +31,21 @@ const NewTaskForm = () => {
         const arr = localStorage.getItem(TASKS);
         const lastTasks = arr ? JSON.parse(arr) : [];
         const newTask = [text, status];
-        if (newTask[0] !== ""){
-            localStorage.setItem(TASKS, JSON.stringify([...lastTasks, newTask]));
-        }
+        // if (newTask[0] !== ""){
+        //     localStorage.setItem(TASKS, JSON.stringify([...lastTasks, newTask]));
+        // }
+        lastTasks[textForEdit[2]] = newTask
+        localStorage.setItem(TASKS, JSON.stringify([...lastTasks]));
+        localStorage.removeItem(FOREDIT);
 
         navigate("/");
     }
 
     return(
         <form action="" className={s.form}>
-            <textarea placeholder="Add a new task..." onChange={TextChanged} className={s.textarea}></textarea>
+            <textarea onChange={TextChanged} className={s.textarea}>{textForEdit[0]}</textarea>
             <label htmlFor="Status" className={s.label}>Статус:</label>
-            <select name="" id="Status" onChange={StatusChanged} className={s.select}>
+            <select name="" id="Status" onChange={StatusChanged} className={s.select} defaultValue={textForEdit[1]}>
                 <option value="Не начата">Не начата</option>
                 <option value="В процессе">В процессе</option>
                 <option value="Завершена">Завершена</option>
@@ -46,4 +55,4 @@ const NewTaskForm = () => {
     )
 }
 
-export default NewTaskForm;
+export default EditTaskForm;
