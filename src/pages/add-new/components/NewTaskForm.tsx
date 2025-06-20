@@ -1,34 +1,40 @@
 import "./NewTaskForm.css"
 import { useNavigate } from "react-router-dom";
-import { useState, type ReactHTMLElement } from "react";
+import { useState } from "react";
+//import { useState, type ReactHTMLElement } from "react";
+import { TASKS } from "../../../components/constants";
 
 const NewTaskForm = () => {
-    const [textarea, setTextarea] = useState('');
-    const [select, setSelect] = useState('Not');
-    
-    const navigate = useNavigate();
-
-    const Click = () =>{
-
-        navigate("/")
-    }
+    const [text, setText] = useState('');
+    const [status, setStatus] = useState('Not');
 
     const TextChanged = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setTextarea(event.target.value)
+        setText(event.target.value)
+    }
+    const StatusChanged = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setStatus(event.target.value)
     }
 
-    const SelectChanged = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelect(event.target.value)
-    }
+    //console.log(text);
+    //console.log(select);
+    //console.log(TASKS);
 
-    console.log(textarea)
-    console.log(select)
+    const navigate = useNavigate();
+    const Click = () => {
+
+        const arr = localStorage.getItem(TASKS);
+        const lastTasks = arr ? JSON.parse(arr) : [];
+        const newTask = [text, status];
+        localStorage.setItem(TASKS, JSON.stringify([...lastTasks, newTask]));
+
+        navigate("/");
+    }
 
     return(
         <form action="">
             <textarea placeholder="Add a new task..." onChange={TextChanged}></textarea>
             <label htmlFor="Status">Статус:</label>
-            <select name="" id="Status" onChange={SelectChanged}>
+            <select name="" id="Status" onChange={StatusChanged}>
                 <option value="Not">Не начата</option>
                 <option value="In">В процессе</option>
                 <option value="Done">Завершена</option>

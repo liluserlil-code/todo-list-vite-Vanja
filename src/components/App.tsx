@@ -3,9 +3,9 @@
 //import viteLogo from '/vite.svg'
 //import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Tasks from './pages/tasks-main/Tasks'
-import Edit from './pages/edit/Edit'
-import AddNew from './pages/add-new/AddNew'
+import Tasks from '../pages/tasks-main/Tasks'
+import Edit from '../pages/edit/Edit'
+import AddNew from '../pages/add-new/AddNew'
 function App() {
 
   return (
