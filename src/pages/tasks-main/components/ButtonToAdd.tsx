@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import s from "./ButtonToAdd.module.css"
 
 const ButtonToAdd = () => {
     const navigate = useNavigate();
@@ -8,7 +9,7 @@ const ButtonToAdd = () => {
     }
 
     return(
-        <button onClick={Click}>Add new task</button>
+        <button onClick={Click} className={s.button}>Add new task</button>
     )
 }
 

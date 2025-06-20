@@ -3,7 +3,7 @@ import NewTaskForm from "./components/NewTaskForm";
 const AddNew = () => {
     return(
         <>
-            <header>
+            <header style={{textAlign: "center"}}>
                 <h1>
                     Add new task
                 </h1>

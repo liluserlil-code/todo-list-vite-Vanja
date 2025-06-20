@@ -1,6 +1,6 @@
 const Edit = () => {
     return(
-        <header>
+        <header style={{textAlign: "center"}}>
             <h1>
                 Edit a task
             </h1>

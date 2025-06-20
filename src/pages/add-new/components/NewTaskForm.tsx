@@ -1,4 +1,4 @@
-import "./NewTaskForm.css"
+import s from "./NewTaskForm.module.css"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 //import { useState, type ReactHTMLElement } from "react";
@@ -25,21 +25,23 @@ const NewTaskForm = () => {
         const arr = localStorage.getItem(TASKS);
         const lastTasks = arr ? JSON.parse(arr) : [];
         const newTask = [text, status];
-        localStorage.setItem(TASKS, JSON.stringify([...lastTasks, newTask]));
+        if (newTask[0] !== ""){
+            localStorage.setItem(TASKS, JSON.stringify([...lastTasks, newTask]));
+        }
 
         navigate("/");
     }
 
     return(
-        <form action="">
-            <textarea placeholder="Add a new task..." onChange={TextChanged}></textarea>
-            <label htmlFor="Status">Статус:</label>
-            <select name="" id="Status" onChange={StatusChanged}>
-                <option value="Not">Не начата</option>
-                <option value="In">В процессе</option>
-                <option value="Done">Завершена</option>
+        <form action="" className={s.form}>
+            <textarea placeholder="Add a new task..." onChange={TextChanged} className={s.textarea}></textarea>
+            <label htmlFor="Status" className={s.label}>Статус:</label>
+            <select name="" id="Status" onChange={StatusChanged} className={s.select}>
+                <option value="Не начата">Не начата</option>
+                <option value="В процессе">В процессе</option>
+                <option value="Завершена">Завершена</option>
             </select>
-            <button onClick={Click}>Save</button>
+            <button onClick={Click} className={s.button}>Save</button>
         </form>
     )
 }

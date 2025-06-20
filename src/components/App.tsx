@@ -3,7 +3,7 @@
 //import viteLogo from '/vite.svg'
 //import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Tasks from '../pages/tasks-main/Tasks'
+import TasksList from '../pages/tasks-main/TasksList'
 import Edit from '../pages/edit/Edit'
 import AddNew from '../pages/add-new/AddNew'
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Tasks />}/>
+          <Route path="/" element={<TasksList />}/>
           <Route path="/edit" element={<Edit/>}/>
           <Route path="/add-new" element={<AddNew/>}/>
         </Routes>
