@@ -11,7 +11,7 @@ const EditTaskForm = () => {
     //console.log(textForEdit[0])
     //console.log(textForEdit);
 
-    const [text, setText] = useState('');
+    const [text, setText] = useState(textForEdit[0]);
     const [status, setStatus] = useState('Не начата');
 
     const TextChanged = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -31,11 +31,13 @@ const EditTaskForm = () => {
         const arr = localStorage.getItem(TASKS);
         const lastTasks = arr ? JSON.parse(arr) : [];
         const newTask = [text, status];
-        // if (newTask[0] !== ""){
-        //     localStorage.setItem(TASKS, JSON.stringify([...lastTasks, newTask]));
-        // }
-        lastTasks[textForEdit[2]] = newTask
-        localStorage.setItem(TASKS, JSON.stringify([...lastTasks]));
+        if (newTask[0] !== ""){
+            lastTasks[textForEdit[2]] = newTask
+            localStorage.setItem(TASKS, JSON.stringify([...lastTasks]));
+        } else{
+            lastTasks[textForEdit[2]].removeItem
+            localStorage.setItem(TASKS, JSON.stringify([...lastTasks]));
+        }
         localStorage.removeItem(FOREDIT);
 
         navigate("/");
@@ -43,7 +45,7 @@ const EditTaskForm = () => {
 
     return(
         <form action="" className={s.form}>
-            <textarea onChange={TextChanged} className={s.textarea}>{textForEdit[0]}</textarea>
+            <textarea onChange={TextChanged} className={s.textarea} defaultValue={textForEdit[0]}></textarea>
             <label htmlFor="Status" className={s.label}>Статус:</label>
             <select name="" id="Status" onChange={StatusChanged} className={s.select} defaultValue={textForEdit[1]}>
                 <option value="Не начата">Не начата</option>
