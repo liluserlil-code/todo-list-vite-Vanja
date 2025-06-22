@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import AddNew from "../pages/add-new/AddNew";
-import Edit from "../pages/edit/Edit";
-import TasksList from "../pages/tasks-main/TasksList";
+import AddNew from "../pages/addNew";
+import Edit from "../pages/editTask";
+import TasksList from "../pages/mainPage";
 import type { ReactElement } from "react";
 
 const AppRouter = (): ReactElement => {

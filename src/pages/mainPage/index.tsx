@@ -2,24 +2,19 @@ import ButtonToAdd from "./components/ButtonToAdd";
 import { TASKS } from "../../components/constants";
 import Task from "./components/Task";
 import s from "./components/TasksList.module.css"
+import type { INewTask } from "../../components/types";
 
 const TasksList = () => {
     const arr = localStorage.getItem(TASKS);
-    const tasks = arr ? JSON.parse(arr) : [];
-    // console.log(Tasks);
-    // console.log(Tasks[0]);
-    // console.log(typeof Tasks);
+    const tasks: INewTask[] = arr ? JSON.parse(arr) : [];
+
     return(
         <>
-            <header className={s.header}>
-                <h1>
-                    TODO list
-                </h1>
-            </header>
+            <header style={{textAlign: "center"}}>TODO list</header>
             <ButtonToAdd/>
             <div className={s.main}>
-                {tasks.map((task: string[], index: number) =>(
-                    <Task key={index} text={task[0]} status={task[1]} index={index}/>
+                {tasks.map((task: INewTask, index: number) =>(
+                    <Task key={index} text={task.text} status={task.status} index={index}/>
                 ))}
             </div>
         </>

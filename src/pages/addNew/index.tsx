@@ -1,12 +1,11 @@
-import NewTaskForm from "./components/NewTaskForm";
+import type { ReactElement } from "react";
+import NewTaskForm from "./components/newTaskForm.tsx";
 
-const AddNew = () => {
+const AddNew = (): ReactElement => {
     return(
         <>
             <header style={{textAlign: "center"}}>
-                <h1>
-                    Add new task
-                </h1>
+                Add new task
             </header>
             <NewTaskForm/>
         </>
