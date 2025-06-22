@@ -1,10 +1,12 @@
 import s from "./EditTaskForm.module.css"
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 //import { useState, type ReactHTMLElement } from "react";
 import { FOREDIT } from "../../../components/constants";
 import { TASKS } from "../../../components/constants";
 
+//TODO store task info in object instead array
+//TODO search useParams. Give edit task id in url params. Get task data by this id through LS.
 const EditTaskForm = () => {
     const raw = localStorage.getItem(FOREDIT)
     const textForEdit = raw ? JSON.parse(raw) : [];
@@ -14,10 +16,10 @@ const EditTaskForm = () => {
     const [text, setText] = useState(textForEdit[0]);
     const [status, setStatus] = useState('Не начата');
 
-    const TextChanged = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const TextChanged = (event: ChangeEvent<HTMLTextAreaElement>) => {
         setText(event.target.value)
     }
-    const StatusChanged = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const StatusChanged = (event: ChangeEvent<HTMLSelectElement>) => {
         setStatus(event.target.value)
     }
 

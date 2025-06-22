@@ -5,9 +5,19 @@ import { useState } from "react";
 import { TASKS } from "../../../components/constants";
 
 const NewTaskForm = () => {
+    //TODO write all types in useState
     const [text, setText] = useState('');
     const [status, setStatus] = useState('Не начата');
 
+//TODO Task info store in this interfac
+    // interface ITask {
+    //     text: string;
+    //     status: string;
+    // };
+
+    // type TasksList = ITask[];
+
+    //TODO onTextChanged
     const TextChanged = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setText(event.target.value)
     }
@@ -20,6 +30,8 @@ const NewTaskForm = () => {
     //console.log(TASKS);
 
     const navigate = useNavigate();
+
+    //TODO onClick
     const Click = () => {
 
         const arr = localStorage.getItem(TASKS);
@@ -32,6 +44,8 @@ const NewTaskForm = () => {
         navigate("/");
     }
 
+    //TODO handle Save in onSubmit form action
+    //TODO set onSubmit button disabled, if text value is empty
     return(
         <form action="" className={s.form}>
             <textarea placeholder="Add a new task..." onChange={TextChanged} className={s.textarea}></textarea>

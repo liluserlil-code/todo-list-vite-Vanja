@@ -8,6 +8,8 @@ import Edit from '../pages/edit/Edit'
 import AddNew from '../pages/add-new/AddNew'
 function App() {
 
+//TODO Removed empty tag, in necessary way, changed it on Fragment
+//TODO Move Router to router directory
   return (
     <>
       <Router>
@@ -20,5 +22,10 @@ function App() {
     </>
   )
 }
+
+//TODO Rewrite all components in this function style
+// const App2 = (): ReactElement => {
+
+// }
 
 export default App
