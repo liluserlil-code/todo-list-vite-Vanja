@@ -10,7 +10,7 @@ const TasksList = () => {
 
     return(
         <>
-            <header style={{textAlign: "center"}}>TODO list</header>
+            <header style={{textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px"}}>TODO list</header>
             <ButtonToAdd/>
             <div className={s.main}>
                 {tasks.map((task: INewTask, index: number) =>(

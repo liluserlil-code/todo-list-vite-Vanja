@@ -1,4 +1,6 @@
-import s from "./newTaskForm.module.css"
+// Кароче я не знал как назвать этот файл и я назвал его контент
+
+import s from "./NewTaskForm.module.css"
 import { useNavigate } from "react-router-dom";
 import { useState, type ReactElement } from "react";
 import saveTaskInLS from "./saveTaskInLS";
@@ -20,7 +22,8 @@ const NewTaskForm = (): ReactElement => {
     const navigate = useNavigate();
 
     //TODO onClick
-    const onClick = () => {
+    const handleSubmit = () => {
+        if (text === "") return
         saveTaskInLS({text, status});
         navigate("/");
     }
@@ -28,7 +31,7 @@ const NewTaskForm = (): ReactElement => {
     //TODO handle Save in onSubmit form action
     //TODO set onSubmit button disabled, if text value is empty
     return(
-        <form action="" className={s.form}>
+        <form action="" className={s.form} onSubmit={handleSubmit}>
             <textarea placeholder="Add a new task..." onChange={onTextChanged} className={s.textarea}></textarea>
             <label htmlFor="Status" className={s.label}>Статус:</label>
             <select name="" id="Status" onChange={onStatusChanged} className={s.select}>
@@ -36,7 +39,7 @@ const NewTaskForm = (): ReactElement => {
                 <option value="В процессе">В процессе</option>
                 <option value="Завершена">Завершена</option>
             </select>
-            <button onClick={onClick} className={s.button}>Save</button>
+            <button type="submit" className={s.button}>Save</button>
         </form>
     )
 }
