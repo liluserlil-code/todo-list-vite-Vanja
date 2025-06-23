@@ -7,14 +7,12 @@ const Edit = ():ReactElement => {
     const {stringId} = useParams<{stringId: string}>();
     const id:number = stringId ? parseInt(stringId) : 0;
     return(
-        <>
+        <div>
             <header style={{textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px"}}>
-                <h1>
-                    Edit a task
-                </h1>
+                Edit a task
             </header>
             <EditTaskForm id={id}/>
-        </>
+        </div>
     );
 }
 
