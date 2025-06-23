@@ -8,9 +8,7 @@ import saveTaskInLS from "../../../components/LS/saveTasksArrayInLS";
 //TODO store task info in object instead array
 //TODO search useParams. Give edit task id in url params. Get task data by this id through LS.
 const EditTaskForm = ({id}: {id: number}):ReactElement => {
-    // const {stringId} = useParams<{stringId: string}>();
     const tasksArray: INewTask[] = getTasksArrayFromLS();
-    // const id:number = stringId ? parseInt(stringId) : 0;
 
     const [text, setText] = useState<string>(tasksArray[id].text);
     const [status, setStatus] = useState<string>(tasksArray[id].status);

@@ -1,4 +1,4 @@
-import ButtonToAdd from "./components/ButtonToAdd";
+import ButtonToAdd from "./components/buttonToAdd";
 import type { INewTask } from "../../components/types";
 import TasksList from "./components/tasksList";
 import type { ReactElement } from "react";

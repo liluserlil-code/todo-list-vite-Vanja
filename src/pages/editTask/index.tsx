@@ -1,8 +1,9 @@
-import EditTaskForm from "./components/EditTaskForm";
+import type { ReactElement } from "react";
+import EditTaskForm from "./components/editTaskForm.tsx";
 import { useParams } from "react-router-dom";
 
 
-const Edit = () => {
+const Edit = ():ReactElement => {
     const {stringId} = useParams<{stringId: string}>();
     const id:number = stringId ? parseInt(stringId) : 0;
     return(

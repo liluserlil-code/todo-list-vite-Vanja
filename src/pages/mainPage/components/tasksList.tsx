@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import Task from "./task.tsx";
+import Task from "./task";
 import s from "./tasksList.module.css"
 import type { INewTask } from "../../../components/types";
 
