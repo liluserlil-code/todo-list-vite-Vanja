@@ -1,5 +1,3 @@
-// Кароче я не знал как назвать этот файл и я назвал его контент
-
 import s from "./NewTaskForm.module.css"
 import { useNavigate } from "react-router-dom";
 import { useState, type ReactElement } from "react";
@@ -23,7 +21,6 @@ const NewTaskForm = (): ReactElement => {
 
     //TODO onClick
     const handleSubmit = () => {
-        if (text === "") return
         saveTaskInLS({text, status});
         navigate("/");
     }
@@ -31,6 +28,7 @@ const NewTaskForm = (): ReactElement => {
     //TODO handle Save in onSubmit form action
     //TODO set onSubmit button disabled, if text value is empty
     return(
+        // возможно эту форму нужно вывести в отдельный файл
         <form action="" className={s.form} onSubmit={handleSubmit}>
             <textarea placeholder="Add a new task..." onChange={onTextChanged} className={s.textarea}></textarea>
             <label htmlFor="Status" className={s.label}>Статус:</label>
@@ -39,7 +37,7 @@ const NewTaskForm = (): ReactElement => {
                 <option value="В процессе">В процессе</option>
                 <option value="Завершена">Завершена</option>
             </select>
-            <button type="submit" className={s.button}>Save</button>
+            <button type="submit" disabled={text.trim()===""}className={s.button}>Save</button>
         </form>
     )
 }
