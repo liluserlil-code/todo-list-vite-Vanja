@@ -1,4 +1,4 @@
-import EditTaskForm from "./components/editTaskForm";
+import EditTaskForm from "./components/EditTaskForm";
 import { useParams } from "react-router-dom";
 
 

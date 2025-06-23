@@ -1,7 +1,6 @@
 import s from "./editTaskForm.module.css"
 import { useNavigate } from "react-router-dom";
 import { useState, type ChangeEvent, type ReactElement } from "react";
-import { useParams } from "react-router-dom";
 import { getTasksArrayFromLS } from "../../../components/LS/getTasksArrayFromLS";
 import type { INewTask } from "../../../components/types";
 import saveTaskInLS from "../../../components/LS/saveTasksArrayInLS";
