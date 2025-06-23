@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import s from "./ButtonToAdd.module.css"
+import s from "./buttonToAdd.module.css"
+import type { ReactElement } from "react";
 
-const ButtonToAdd = () => {
+const ButtonToAdd = ():ReactElement => {
     const navigate = useNavigate();
 
     const Click = () =>{
