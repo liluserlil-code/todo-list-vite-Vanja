@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import s from "./Task.module.css"
+import s from "./task.module.css"
 import { FOREDIT } from "../../../components/constants";
 
 const Task = ({text, status, index}: {text: string; status: string; index: number}) =>{

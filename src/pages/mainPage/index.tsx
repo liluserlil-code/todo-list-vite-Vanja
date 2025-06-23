@@ -1,24 +1,19 @@
 import ButtonToAdd from "./components/ButtonToAdd";
-import { TASKS } from "../../components/constants";
-import Task from "./components/Task";
-import s from "./components/TasksList.module.css"
 import type { INewTask } from "../../components/types";
+import TasksList from "./components/tasksList";
+import type { ReactElement } from "react";
+import { getTasksArrayFromLS } from "../../components/getTasksArrayFromLS";
 
-const TasksList = () => {
-    const arr = localStorage.getItem(TASKS);
-    const tasks: INewTask[] = arr ? JSON.parse(arr) : [];
+const MainPage = (): ReactElement => {
+    const tasksArray: INewTask[] = getTasksArrayFromLS();
 
     return(
-        <>
+        <div>
             <header style={{textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px"}}>TODO list</header>
             <ButtonToAdd/>
-            <div className={s.main}>
-                {tasks.map((task: INewTask, index: number) =>(
-                    <Task key={index} text={task.text} status={task.status} index={index}/>
-                ))}
-            </div>
-        </>
+            <TasksList tasks={tasksArray}/>
+        </div>
     );
 }
 
-export default TasksList;
+export default MainPage;
