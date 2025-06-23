@@ -1,7 +1,7 @@
 import s from "./NewTaskForm.module.css"
 import { useNavigate } from "react-router-dom";
 import { useState, type ReactElement } from "react";
-import saveTaskInLS from "./saveTaskInLS";
+import saveTaskInLS from "../../../components/LS/saveTasksArrayInLS";
 
 const NewTaskForm = (): ReactElement => {
     //TODO write all types in useState
@@ -18,10 +18,11 @@ const NewTaskForm = (): ReactElement => {
     }
 
     const navigate = useNavigate();
+    const id:number = -1;
 
     //TODO onClick
     const handleSubmit = () => {
-        saveTaskInLS({text, status});
+        saveTaskInLS({text, status, id});
         navigate("/");
     }
 

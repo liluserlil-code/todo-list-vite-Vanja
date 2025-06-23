@@ -1,14 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import s from "./task.module.css"
-import { FOREDIT } from "../../../components/constants";
 
-const Task = ({text, status, index}: {text: string; status: string; index: number}) =>{
+const Task = ({text, status, id}: {text: string; status: string; id: number}) =>{
+
     const navigate = useNavigate();
 
     const toEdit = () =>{
-        const dataToEdit = [text, status, index];
-        localStorage.setItem(FOREDIT, JSON.stringify(dataToEdit));
-        navigate("/edit")
+        navigate(`/edit/${id}`)
     }
 
     return(

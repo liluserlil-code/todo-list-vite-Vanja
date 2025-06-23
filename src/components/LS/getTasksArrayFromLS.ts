@@ -1,5 +1,5 @@
-import type { INewTask } from "./types";
-import { TASKS } from "./constants";
+import type { INewTask } from "../types";
+import { TASKS } from "../constants";
 
 export function getTasksArrayFromLS ():INewTask[] {
     const arr = localStorage.getItem(TASKS);

@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 // \|/ Кароче я не знал как назвать этот файл и я назвал его контент
-import NewTaskForm from "./components/NewTaskForm";
+import NewTaskForm from "./components/newTaskForm";
 
 const AddNew = (): ReactElement => {
     return(

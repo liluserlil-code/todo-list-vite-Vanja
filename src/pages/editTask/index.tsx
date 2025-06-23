@@ -1,6 +1,10 @@
-import EditTaskForm from "./components/EditTaskForm";
+import EditTaskForm from "./components/editTaskForm";
+import { useParams } from "react-router-dom";
+
 
 const Edit = () => {
+    const {stringId} = useParams<{stringId: string}>();
+    const id:number = stringId ? parseInt(stringId) : 0;
     return(
         <>
             <header style={{textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px"}}>
@@ -8,7 +12,7 @@ const Edit = () => {
                     Edit a task
                 </h1>
             </header>
-            <EditTaskForm/>
+            <EditTaskForm id={id}/>
         </>
     );
 }

@@ -6,8 +6,8 @@ import type { INewTask } from "../../../components/types";
 const TasksList = ({tasksArray}: {tasksArray: INewTask[];}): ReactElement => {
     return(
         <div className={s.main}>
-            {tasksArray.map((task: INewTask, index: number) =>(
-                <Task key={index} text={task.text} status={task.status} index={index}/>
+            {tasksArray.map((task: INewTask) =>(
+                <Task key={task.id} text={task.text} status={task.status} id={task.id}/>
             ))}
         </div>
     )    
