@@ -1,18 +1,19 @@
 import ButtonToAdd from "./components/buttonToAdd";
 import type { INewTask } from "../../components/types";
 import TasksList from "./components/tasksList";
-import type { ReactElement } from "react";
+import { Fragment, type ReactElement } from "react";
 import { getTasksArrayFromLS } from "../../components/LS/getTasksArrayFromLS";
+import Header from "../../components/header"
 
 const MainPage = (): ReactElement => {
     const tasksArray: INewTask[] = getTasksArrayFromLS();
 
     return(
-        <div>
-            <header style={{textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px"}}>TODO list</header>
+        <Fragment>
+            <Header text = {"TODO list"}/>
             <ButtonToAdd/>
             <TasksList tasksArray={tasksArray}/>
-        </div>
+        </Fragment>
     );
 }
 

@@ -1,18 +1,16 @@
-import type { ReactElement } from "react";
+import { Fragment, type ReactElement } from "react";
 import EditTaskForm from "./components/editTaskForm.tsx";
 import { useParams } from "react-router-dom";
-
+import Header from "../../components/header"
 
 const Edit = ():ReactElement => {
     const {stringId} = useParams<{stringId: string}>();
     const id:number = stringId ? parseInt(stringId) : 0;
     return(
-        <div>
-            <header style={{textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px"}}>
-                Edit a task
-            </header>
+        <Fragment>
+            <Header text = {"Edit a task"}/>
             <EditTaskForm id={id}/>
-        </div>
+        </Fragment>
     );
 }
 

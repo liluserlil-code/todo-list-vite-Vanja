@@ -1,15 +1,14 @@
-import type { ReactElement } from "react";
+import { Fragment, type ReactElement } from "react";
 // \|/ Кароче я не знал как назвать этот файл и я назвал его контент
 import NewTaskForm from "./components/newTaskForm";
+import Header from "../../components/header"
 
 const AddNew = (): ReactElement => {
     return(
-        <div>
-            <header style={{textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px"}}>
-                Add new task
-            </header>
+        <Fragment>
+            <Header text={"Add new task"}/>
             <NewTaskForm/>
-        </div>
+        </Fragment>
     )
 }
 

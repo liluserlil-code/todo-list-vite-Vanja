@@ -44,7 +44,6 @@ const EditTaskForm = ({id}: {id: number}):ReactElement => {
                     <DropdownMenu.Item onSelect={() => setStatus("Завершена")} className={s.item}>Завершена</DropdownMenu.Item>
                 </DropdownMenu.Content>
             </DropdownMenu.Root>
-            <button type="submit" disabled={text.trim()===""}className={s.button}>Save</button>
             <button type="submit" disabled={text.trim() === ""} className={s.button}>Save</button>
         </form>
     )
