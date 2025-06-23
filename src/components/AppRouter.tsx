@@ -10,7 +10,7 @@ const AppRouter = (): ReactElement => {
         <Router>
             <Routes>
                 <Route path="/" element={<MainPage/>}></Route>
-                <Route path="/edit/:id" element={<Edit/>}></Route>
+                <Route path="/edit/:stringId" element={<Edit/>}></Route>
                 <Route path="/add-new" element={<AddNew/>}></Route>
             </Routes>
         </Router>
