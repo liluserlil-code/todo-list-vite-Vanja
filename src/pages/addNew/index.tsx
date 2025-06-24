@@ -1,7 +1,6 @@
 import { Fragment, type ReactElement } from "react";
-// \|/ Кароче я не знал как назвать этот файл и я назвал его контент
 import NewTaskForm from "./components/newTaskForm";
-import Header from "../../components/header"
+import Header from "../../shared/header"
 
 const AddNew = (): ReactElement => {
     return(

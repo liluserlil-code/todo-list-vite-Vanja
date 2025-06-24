@@ -1,8 +1,9 @@
 import type { ReactElement } from "react";
+import s from "./header.module.css";
 
 const Header = ({text}: {text: string}):ReactElement => {
     return (
-        <header style={{textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px"}}>
+        <header className={s.header}>
             {text}
         </header>
     );

@@ -5,12 +5,12 @@ import type { ReactElement } from "react";
 const ButtonToAdd = ():ReactElement => {
     const navigate = useNavigate();
 
-    const Click = () =>{
+    const onClick = () =>{
         navigate("/add-new")
     }
 
     return(
-        <button onClick={Click} className={s.button}>Add new task</button>
+        <button onClick={onClick} className={s.button}>Add new task</button>
     )
 }
 
