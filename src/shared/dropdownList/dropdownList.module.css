@@ -1,0 +1,8 @@
+.select{
+    position: absolute;
+    width: 150px;
+    right: calc(25%/2 - 75px);
+    top: 20px;
+    font-size: 16px;
+    text-align: center;
+}

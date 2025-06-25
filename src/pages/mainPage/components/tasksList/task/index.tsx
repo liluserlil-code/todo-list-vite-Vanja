@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import s from "./task.module.css"
 import type { ReactElement } from "react";
 
-const Task = ({text, status, id}: {text: string; status: string; id: number}):ReactElement =>{
+const Task = ({ text, status, id }: { text: string; status: string; id: number }):ReactElement =>{
 
     const navigate = useNavigate();
 

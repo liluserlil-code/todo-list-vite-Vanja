@@ -2,6 +2,7 @@ import s from "./NewTaskForm.module.css"
 import { useNavigate } from "react-router-dom";
 import { useState, type ReactElement } from "react";
 import { TasksService } from "../../../../services/taskService";
+import DropdownList from "../../../../shared/dropdownList";
 
 //TODO create Dropdown how own component, not in loaded library.
 const NewTaskForm = (): ReactElement => {
@@ -29,6 +30,7 @@ const NewTaskForm = (): ReactElement => {
                 <option value="В процессе">В процессе</option>
                 <option value="Завершена">Завершена</option>
             </select>
+            <DropdownList onStatusChanged={onStatusChanged} />
             <button type="submit" disabled={text.trim()===""}className={s.button}>Save</button>
         </form>
     )
