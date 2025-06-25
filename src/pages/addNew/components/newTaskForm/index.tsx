@@ -25,11 +25,6 @@ const NewTaskForm = (): ReactElement => {
         <form action="" className={s.form} onSubmit={handleSubmit}>
             <textarea placeholder="Add a new task..." onChange={onTextChanged} className={s.textarea}></textarea>
             <label htmlFor="Status" className={s.label}>Статус:</label>
-            <select name="" id="Status" onChange={onStatusChanged} className={s.select}>
-                <option value="Не начата">Не начата</option>
-                <option value="В процессе">В процессе</option>
-                <option value="Завершена">Завершена</option>
-            </select>
             <DropdownList onStatusChanged={onStatusChanged} />
             <button type="submit" disabled={text.trim()===""}className={s.button}>Save</button>
         </form>
