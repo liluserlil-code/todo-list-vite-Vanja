@@ -1,0 +1,15 @@
+.dataElement{
+    width: 95%;
+    border: 2px solid black;
+    padding: 2px;
+}
+
+.title{
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.completed{
+    box-sizing: border-box;
+    text-align: end;
+}

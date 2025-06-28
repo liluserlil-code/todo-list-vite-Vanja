@@ -1,54 +1,42 @@
-# React + TypeScript + Vite
+# TODO LIST
+App for a managering your tasks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation and Run
+Clone the repository:
+git clone https://github.com/liluserlil-code/todo-list-vite-Vanja.git
 
-Currently, two official plugins are available:
+Go to the project folder:
+cd todo-list-vite-Vanja
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+# Add new task:
+1. Click on the "Add new task" button.
+2. Select the status of a new task from the drop-down list.
+3. Write a tasks text
+4. Clicking on a Save button.
+# Edit a task:
+1. Click on the "Редактировать" button.
+2. Select the status of a new task from the drop-down list.
+3. Write a tasks text
+4. Clicking on a Save button.
 
-## Expanding the ESLint configuration
+## Features
+1. Drop-down list: User can choose status for a task
+2. Page for editin: User can edit a text and status of a task 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies
+1. HTML: Used for the structure of the web page.
+2. CSS: Used to style elements and create visual design.
+3. TypeScript: used for strong typing of variables.
+4. React: Used for ease of writing code
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Main Files
+1. index.html: The main HTML page of the app.
+2. src/App.tsx: main file of an app
+3. src/domains: TS files with interfaces
+4. src/router: TSX file with realised React Routing
+5. src/services/taskService: TS file with class TasksService for reusing his static methods
+6. src/shared: folder with reusing components like buttons, droplists, headers
+7. src/utils/constants: TS file for import constant names for working with LocalStorage
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```

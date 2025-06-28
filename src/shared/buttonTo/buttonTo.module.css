@@ -1,6 +1,7 @@
 .button{
-    position: absolute;
-    display: block;
+    /* position: absolute; */
+    /* display: flex;
+    flex-direction: column; */
     size: 100px;
     font-size: 16px;
     background-color: black;
